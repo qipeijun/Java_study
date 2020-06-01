@@ -84,8 +84,13 @@ class Catss extends Animalss {
  * 抽象类 abstract
  * 抽象类不能被实例化
  * 抽象方法 强制子类要做的事
+ * 被 abstract 修饰的方法，没有方法体
+ * abstract 和 static 不能共存 abstract不能直接调用
+ * abstract 和 final 不能共存，需要重写。不能定义为常量
+ * abstract 和 private 不能共存，需要重写。不能定义为私有的
  */
 abstract class Chouxiang {
+
     // 抽象方法,子类需要强制重新写
     public abstract void show();
 
