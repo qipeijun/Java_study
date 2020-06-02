@@ -78,9 +78,7 @@ class Cat1 extends Anima implements Hige {
 class Dog1 extends Anima implements Hige {
 
     public Dog1() {
-    }
-
-    ;
+    };
 
     public Dog1(String name, int age) {
         super(name, age);
@@ -91,3 +89,5 @@ class Dog1 extends Anima implements Hige {
         System.out.println("狗能跳100cm");
     }
 }
+
+
