@@ -48,6 +48,7 @@ interface Inter {
 }
 
 interface InterA {
+//    public static final int nums = 10;
     public abstract void showMe();
 }
 

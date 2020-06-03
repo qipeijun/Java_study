@@ -26,4 +26,3 @@ public class Demo10 {
 }
 
 
-// todo 10-07
