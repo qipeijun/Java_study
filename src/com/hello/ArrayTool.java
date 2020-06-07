@@ -12,7 +12,7 @@ public final class ArrayTool {
     /**
      * 私有构造方法
      */
-    private ArrayTool(){};
+    ArrayTool(){};
 
     /**
      * 获取最大值
@@ -49,6 +49,15 @@ public final class ArrayTool {
     public static final int[] revArr(int[] arr){
         for (int i = 0; i<arr.length/2;i++){
             int temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
+        }
+        return arr;
+    }
+
+    public static final char[] revArr(char[] arr){
+        for (int i = 0; i<arr.length/2;i++){
+            char temp = arr[i];
             arr[i] = arr[arr.length-1-i];
             arr[arr.length-1-i] = temp;
         }

@@ -1,4 +1,5 @@
 package com.hello;
+import java.util.Scanner;
 
 public class Demo12_string {
 
@@ -33,6 +34,43 @@ public class Demo12_string {
         // ""和null 的区别，""是字符串常量，null 是什么都不是
 
 
+
+        String s8 = "qipeijun";
+        System.out.println(s8.length());
+        System.out.println(s8.charAt(2)); // 返回字符的索引 下的字符 p  需要注意索引越界
+        System.out.println(s8.indexOf('p')); // 传递char 类型会自动提升
+
+        System.out.println(s8.indexOf('q',2));  // -1 从指定位置开始找
+
+        System.out.println(s8.toUpperCase());
+        System.out.println(s8.substring(0,1).toUpperCase().concat(s8.substring(1).toLowerCase()));
+
+        char[] arr = s8.toCharArray();
+        System.out.println(arr);
+
+        for (int i = 0; i< arr.length;i++){
+            System.out.println(arr[i]);
+        }
+
+        // 遍历字符串
+        for (int i = 0;i<s8.length();i++){
+            System.out.println(s8.charAt(i));
+        }
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入一个字符串");
+        String s9 = scanner.nextLine();
+        char[] arrStr = s9.toCharArray();  // 将字符串转化为数组
+        ArrayTool arrayTool = new ArrayTool();
+        System.out.println(arrayTool.revArr(arrStr));
+
+
+
+
+
+
     }
 
 }
+
