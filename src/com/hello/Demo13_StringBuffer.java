@@ -2,7 +2,7 @@ package com.hello;
 
 public class Demo13_StringBuffer {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println("demo 13 StringBuffer");
 
@@ -30,7 +30,7 @@ public class Demo13_StringBuffer {
 
         // 插入
         StringBuffer sb6 = new StringBuffer("1234");
-        sb6.insert(3,"qipeijun");  // 在指定位置添加元素，如果没有指定位置的索引，就会报错 字符串索引越界
+        sb6.insert(3, "qipeijun");  // 在指定位置添加元素，如果没有指定位置的索引，就会报错 字符串索引越界
 //        System.out.println(sb6); // insert(3,"qipeijun"); 报错 字符串越界
         System.out.println(sb6);
 
@@ -38,14 +38,14 @@ public class Demo13_StringBuffer {
         StringBuffer sb7 = new StringBuffer("qipeijun");
 //        sb7.deleteCharAt(5); // 报错 索引越界异常，当缓冲区中没有元素的时候，就会报字符串索引异常
 //        sb7.deleteCharAt(1); // 删除 下标1的字符
-        sb7.delete(0,2);  // 包含头 不包含尾
-        sb7.delete(0,sb7.length());  // 清空
+        sb7.delete(0, 2);  // 包含头 不包含尾
+        sb7.delete(0, sb7.length());  // 清空
 //        sb7 = new StringBuffer();  // 不要用这种方式清空缓存区，原来的会变成垃圾，浪费内存
         System.out.println(sb7);
 
         // 替换
         StringBuffer sb8 = new StringBuffer("qipeijun");
-        sb8.replace(0,2,"QI");  // star，end，str 包含头，不包含尾
+        sb8.replace(0, 2, "QI");  // star，end，str 包含头，不包含尾
         System.out.println(sb8);
 
         // 反转
@@ -66,9 +66,52 @@ public class Demo13_StringBuffer {
 
         // 通过 append方法
 
-//        todo 13-7
 
+        int[] arr = {1, 2, 4};
+        StringBuffer sb11 = new StringBuffer();
+        sb11.append("[");
+        for (int i = 0; i < arr.length; i++) {
+            sb11.append(arr[i] + ",");
+        }
+        sb11.append("]");
+        System.out.println(sb11.toString());
+
+        StringBuilder sb12 = new StringBuilder("hello"); // 效率高，不安全， 不同步  StringBuffer是同步的，安全的，效率低
+        System.out.println(sb12.toString());
+
+// String 虽然是引用数据类型，但是他当做参数传递时，和基本数据类型一样的
+        change(sb12.toString());
+        System.out.println(sb12.toString());
+
+        maopao();
 
     }
 
+    private static void change(String s) {
+        s += "itcast";
+    }
+
+    // 冒泡排序
+    private static void maopao() {
+        int[] arr = {2, 1, 4, 6, 3, 6, 75, 4};
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length-1 - i; j++) {  // -1是为了防止索引越界
+                if (arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+
+
+        for (int i=0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+
+    }
+
+
 }
+
+// todo 13-18
