@@ -1,5 +1,7 @@
 package com.hello;
 
+import java.util.Random;
+
 public class Demo14_Math {
 
     public static void main(String[] args){
@@ -23,9 +25,20 @@ public class Demo14_Math {
         // 四舍五入
         System.out.println(Math.round(9.99));
 
+        Random r = new Random();
+        int x = r.nextInt();
+        System.out.println(x); // 生成int 取值范围内的随机数
+
+        Random r1 = new Random(1000);
+        int x1 = r1.nextInt();
+        System.out.println(x1);
+
+        Random r2 = new Random();
+        int x2 = r2.nextInt(100); // 生成在0-n范围内的随机数，包含0不包含n
+        System.out.println(x2);
+
 
     }
 
 }
 
-// todo 14-12
