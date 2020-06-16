@@ -29,10 +29,24 @@ public class Demo14_Date {
         Date d2 = sdf.parse(str);  // 将时间字符串转化成日期对象
         System.out.println(d2);
 
+        // 计算出生到现在多少天
+        String b = "1994-11-11";
+        String n = "2020-06-16";
+
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+        Date d3 = sdf1.parse(b);
+        Date d4 = sdf1.parse(n);
+
+        long time = d4.getTime()-d3.getTime();
+        System.out.println(time/1000/60/60/24/365);
+
 
 
     }
 
 }
 
-// todo 14-18
+
+
+
+
