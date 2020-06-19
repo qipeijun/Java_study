@@ -2,6 +2,8 @@ package com.hello;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Vector;
 
 public class Demo15_List {
 
@@ -35,8 +37,30 @@ public class Demo15_List {
         list.set(1,22);
         System.out.println(list);
 
+
+        ListIterator lit = list.listIterator(); // 获取迭代器，list集合特有的
+        while (lit.hasNext()){
+            int str = (int)lit.next();
+            if (str == 1){
+                lit.add(6);
+            }
+        }
+        System.out.println(list);
+
+
+        Vector v = new Vector();
+        v.addElement(1);
+        v.addElement(2);
+        v.addElement(3);
+
+        System.out.println(v);
+
+
     }
 
 }
 
-// todo 15-10
+
+// 集合 查询快，增删慢
+// 链表 查询慢，增删快
+
