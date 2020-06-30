@@ -2,6 +2,7 @@ package com.hello;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Demo16_Generic {
 
@@ -35,7 +36,7 @@ public class Demo16_Generic {
 
         }
 
-
+        List<?> list3 = new ArrayList<>(); // <?> 任意类型  不确定类型的时候指定
 
 
 
